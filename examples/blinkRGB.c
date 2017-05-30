@@ -34,6 +34,7 @@
 int data [] =
 {
   0, 0, 0,
+// white
             6, 1, 2,  // Red
             5, 1, 2, // Green
             4, 1, 2, // Blue
@@ -41,24 +42,26 @@ int data [] =
   5, 0, 0,
   4, 0, 0,
 
-  0, 0, 1,	// Extra delay
+  0, 0, 2,	// Extra delay
 
-// Back again
+// single color
             6, 1, 2,  // Red
   6, 0, 0,
             5, 1, 2, // Green
   5, 0, 0,
             4, 1, 2, // Blue
   4, 0, 0,
-  0, 0, 1,	// Extra delay
+  0, 0, 2,	// Extra delay
+
+// dual color on
             6, 1, 2,  // Red
             5, 1, 2, // Green
   6, 0, 0,
-  5, 0, 0,
+  5, 0, 2,
             5, 1, 2, // Green
             4, 1, 2, // Blue
   5, 0, 0,
-  4, 0, 0,
+  4, 0, 2,
             4, 1, 2, // Blue
             6, 1, 2,  // Red
 
