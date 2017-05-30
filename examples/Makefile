@@ -39,7 +39,7 @@ LDLIBS    = -lwiringPi -lwiringPiDev -lpthread -lm -lcrypt -lrt
 ###############################################################################
 
 SRC	=	blink.c blink8.c blink12.c					\
-		blink12drcs.c							\
+		blink12drcs.c blinkRGB.c					\
 		pwm.c								\
 		speed.c wfi.c isr.c isr-osc.c					\
 		lcd.c lcd-adafruit.c clock.c					\
@@ -76,6 +76,10 @@ blink12drcs:	blink12drcs.o
 blink12:	blink12.o
 	$Q echo [link]
 	$Q $(CC) -o $@ blink12.o $(LDFLAGS) $(LDLIBS)
+
+blinkRGB:	blinkRGB.o
+	$Q echo [link]
+	$Q $(CC) -o $@ blinkRGB.o $(LDFLAGS) $(LDLIBS)
 
 speed:	speed.o
 	$Q echo [link]
