@@ -35,35 +35,37 @@ int data [] =
 {
   0, 0, 0,
 // white
-            6, 1, 2,  // Red
+            4, 1, 2,  // Red
             5, 1, 2, // Green
-            4, 1, 2, // Blue
-  6, 0, 2,
-  5, 0, 2,
+            6, 1, 2, // Blue
   4, 0, 2,
+  5, 0, 2,
+  6, 0, 2,
 
   0, 0, 2,	// Extra delay
 
 // single color
-            6, 1, 2,  // Red
-  6, 0, 2,
+            4, 1, 2,  // Red
+  4, 0, 2,
             5, 1, 2, // Green
   5, 0, 2,
-            4, 1, 2, // Blue
-  4, 0, 2,
+            6, 1, 2, // Blue
+  6, 0, 2,
   0, 0, 2,	// Extra delay
 
 // dual color on
-            6, 1, 2,  // Red
+            4, 1, 2,  // Red
             5, 1, 2, // Green
-  6, 0, 2,
-  5, 0, 2,
-            5, 1, 2, // Green
-            4, 1, 2, // Blue
-  5, 0, 2,
   4, 0, 2,
-            4, 1, 2, // Blue
-            6, 1, 2,  // Red
+  5, 0, 2,
+            5, 1, 2, // Green
+            6, 1, 2, // Blue
+  5, 0, 2,
+  6, 0, 2,
+            6, 1, 2, // Blue
+            4, 1, 2,  // Red
+  6, 0, 2,
+  4, 0, 2,
 
   0, 0, 2,	// Extra delay
   0, 9, 0,	// End marker
@@ -71,7 +73,7 @@ int data [] =
 } ;
 
 
-int main (void)
+int main (int ac, char **av)
 {
   int pin ;
   int dataPtr ;
