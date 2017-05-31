@@ -31,44 +31,43 @@
 // Simple sequencer data
 //	Triplets of LED, On/Off and delay
 
+// LED is annode common.
+#define ON  0
+#define OFF 1
+#define END 9
+
 int data [] =
 {
-  0, 0, 0,
-// white
-            4, 1, 2,  // Red
-            5, 1, 2, // Green
-            6, 1, 2, // Blue
-  4, 0, 2,
-  5, 0, 2,
-  6, 0, 2,
-
-  0, 0, 2,	// Extra delay
+ // White
+            4, ON, 0,  // Red
+            5, ON, 0, // Green
+            6, ON, 2, // Blue
+  4, OFF, 0,
+  5, OFF, 0,
+  6, OFF, 4,	// Extra delay
 
 // single color
-            4, 1, 2,  // Red
-  4, 0, 2,
-            5, 1, 2, // Green
-  5, 0, 2,
-            6, 1, 2, // Blue
-  6, 0, 2,
-  0, 0, 2,	// Extra delay
+            4, ON, 2,  // Red
+  4, OFF, 2,
+            5, ON, 2, // Green
+  5, OFF, 2,
+            6, ON, 2, // Blue
+  6, OFF, 4,	// Extra delay
 
 // dual color on
-            4, 1, 2,  // Red
-            5, 1, 2, // Green
-  4, 0, 2,
-  5, 0, 2,
-            5, 1, 2, // Green
-            6, 1, 2, // Blue
-  5, 0, 2,
-  6, 0, 2,
-            6, 1, 2, // Blue
-            4, 1, 2,  // Red
-  6, 0, 2,
-  4, 0, 2,
-
-  0, 0, 2,	// Extra delay
-  0, 9, 0,	// End marker
+            4, ON, 0,  // Red
+            5, ON, 2, // Green
+  4, OFF, 0,
+  5, OFF, 2,
+            5, ON, 0, // Green
+            6, ON, 2, // Blue
+  5, OFF, 0,
+  6, OFF, 2,
+            6, ON, 0, // Blue
+            4, ON, 2,  // Red
+  6, OFF, 0,
+  4, OFF, 4,	// Extra delay
+  4, END, 0,	// End marker
 
 } ;
 
@@ -82,12 +81,21 @@ int main (int ac, char **av)
   printf ("Raspberry Pi - RGB-LED Sequence\n") ;
   printf ("==============================\n") ;
   printf ("\n") ;
-  printf ("Connect LEDs up to the first GPIO #(4,5,6) to (R,G,B).n") ;
+  printf ("Connect LEDs up to the first GPIO #(4,5,6) to (R,G,B)\n") ;
 
   wiringPiSetup () ;
 
   for (pin = 4 ; pin < 7 ; ++pin)
     pinMode (pin, OUTPUT) ;
+
+  if (ac > 1) {
+    l = atoi(av[1]) & 0x07;
+    printf ("Set LED to %d\n", l) ;
+    digitalWrite (4, l & 4 ? ON : OFF) ; // Red
+    digitalWrite (5, l & 2 ? ON : OFF) ; // Green
+    digitalWrite (6, l & 1 ? ON : OFF) ; // Blue
+    return 0 ;
+  }	
 
   dataPtr = 0 ;
 
