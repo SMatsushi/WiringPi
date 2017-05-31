@@ -54,10 +54,11 @@ OBJ	=	$(SRC:.c=.o)
 
 BINS	=	$(SRC:.c=)
 
-all:	
+all:
 	$Q cat README.TXT
 	$Q echo "    $(BINS)" | fmt
 	$Q echo ""
+	make blinkRGB
 
 really-all:	$(BINS)
 
