@@ -1,0 +1,28 @@
+root@rasp01:/home/matsushi/IoT/Etekcity/wiringPi# git pull upstream master
+From https://github.com/SMatsushi/WiringPi
+ * branch            master     -> FETCH_HEAD
+ Merge made by the 'recursive' strategy.
+  0 files changed
+  mode change 100755 => 100644 debian-template/wiringPi/DEBIAN/postinst
+  mode change 100755 => 100644 debian-template/wiringPi/DEBIAN/postrm
+  mode change 100755 => 100644 debian/rules
+  mode change 100755 => 100644 devLib/maxdetect.c
+  mode change 100755 => 100644 devLib/maxdetect.h
+  mode change 100755 => 100644 examples/PiFace/ladder.c
+  mode change 100755 => 100644 examples/blink.sh
+  mode change 100755 => 100644 examples/q2w/blink.sh
+  mode change 100755 => 100644 gpio/pintest
+  mode change 100755 => 100644 newVersion
+
+root@rasp01:/home/matsushi/IoT/Etekcity/wiringPi# git push upstream master
+Username for 'https://github.com': SMatsushi
+Password for 'https://SMatsushi@github.com': 
+Counting objects: 36, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (31/31), done.
+Writing objects: 100% (31/31), 4.65 KiB, done.
+Total 31 (delta 21), reused 0 (delta 0)
+remote: Resolving deltas: 100% (21/21), completed with 4 local objects.
+To https://github.com/SMatsushi/WiringPi.git
+   c947643..92071a5  master -> master
+root@rasp01:/home/matsushi/IoT/Etekcity/wiringPi# 
