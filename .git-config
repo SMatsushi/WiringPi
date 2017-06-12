@@ -1,0 +1,26 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+        editor = vi
+[remote "origin"]
+	fetch = +refs/heads/*:refs/remotes/origin/*
+	url = git://git.drogon.net/wiringPi
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+[alias]
+        lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+        co = checkout
+        br = branch
+        st = status
+[user]
+        name = Satoshi Matsushita
+        email = matsushi@stanford.edu
+[merge]
+        tool = vimdiff
+
+[remote "upstream"]
+	url = https://github.com/SMatsushi/WiringPi.git
+	fetch = +refs/heads/*:refs/remotes/upstream/*
