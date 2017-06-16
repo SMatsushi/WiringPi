@@ -36,37 +36,45 @@
 #define OFF 1
 #define END 9
 
+#define ON_TIME		1
+#define OFF_TIME	3
+#define INTV_TIME	4
+
+
+
 int data [] =
 {
  // White
             4, ON, 0,  // Red
             5, ON, 0, // Green
-            6, ON, 2, // Blue
+            6, ON, ON_TIME, // Blue
   4, OFF, 0,
   5, OFF, 0,
-  6, OFF, 4,	// Extra delay
+  6, OFF, INTV_TIME,	// Extra delay
 
 // single color
-            4, ON, 2,  // Red
-  4, OFF, 2,
-            5, ON, 2, // Green
-  5, OFF, 2,
-            6, ON, 2, // Blue
-  6, OFF, 4,	// Extra delay
+            4, ON, ON_TIME,  // Red
+  4, OFF, OFF_TIME,
+            5, ON, ON_TIME, // Green
+  5, OFF, OFF_TIME,
+            6, ON, ON_TIME, // Blue
+  6, OFF, INTV_TIME,	// Extra delay
 
 // dual color on
             4, ON, 0,  // Red
-            5, ON, 2, // Green
+            5, ON, ON_TIME, // Green
   4, OFF, 0,
-  5, OFF, 2,
+  5, OFF, OFF_TIME,
             5, ON, 0, // Green
-            6, ON, 2, // Blue
+            6, ON, ON_TIME, // Blue
   5, OFF, 0,
-  6, OFF, 2,
+  6, OFF, OFF_TIME,
             6, ON, 0, // Blue
-            4, ON, 2,  // Red
+            4, ON, ON_TIME,  // Red
   6, OFF, 0,
-  4, OFF, 4,	// Extra delay
+  4, OFF, OFF_TIME,
+// extra Delay
+  4, OFF, INTV_TIME,	// Extra delay
   4, END, 0,	// End marker
 
 } ;
