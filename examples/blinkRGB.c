@@ -98,7 +98,7 @@ int main (int ac, char **av)
 
   if (ac > 1) {
     l = atoi(av[1]) & 0x07;
-    printf ("Set LED to %d\n", l) ;
+    printf ("Set LED to %d=0b(R,G,B)\n", l) ;
     digitalWrite (4, l & 4 ? ON : OFF) ; // Red
     digitalWrite (5, l & 2 ? ON : OFF) ; // Green
     digitalWrite (6, l & 1 ? ON : OFF) ; // Blue
